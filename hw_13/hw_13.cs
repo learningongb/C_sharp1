@@ -1,14 +1,18 @@
 ﻿using static System.Console;
 using System;
 
+int TrimTo100(int value)
+{
+    while (value > 1000)
+    {
+        value = value/10;
+    }
+    return value;
+}
+
 Clear();
 Write("Введите число ");
 int a = int.Parse(ReadLine());
-
-while (a > 1000)
-{
-    a = a/10;
-}
 
 if (a < 100)
 {
@@ -16,5 +20,5 @@ if (a < 100)
 }
 else
 {
-    WriteLine($"Третья цифра {a % 10}");
+    WriteLine($"Третья цифра {TrimTo100(a) % 10}");
 }
