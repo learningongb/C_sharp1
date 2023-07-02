@@ -22,6 +22,7 @@ bool isPolindrom(int value)
     return (value / 10000 == value % 10) && (value % 10000 / 1000 == value % 100 / 10);
 }
 
+Clear();
 int number = InputData();
 if (ValidateInput(number))
     if (isPolindrom(number))
