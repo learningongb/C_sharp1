@@ -2,15 +2,22 @@
 using static System.Console;
 
 Clear();
-Write("Введите число ");
-int digit = int.Parse(ReadLine());
-Write("Введите степень ");
-int power = int.Parse(ReadLine());
+int digit = Prompt("Введите число");
+int power = Prompt("Введите степень");
+WriteLine($"Результат возведения в степень {Pow(digit, power)}");
 
-int result = 1;
-for (int i = 0; i < power; i++) 
+int Pow(int digit, int power)
 {
-    result *= digit;
+    int result = 1;
+    for (int i = 0; i < power; i++)
+    {
+        result *= digit;
+    }
+    return result;
 }
 
-WriteLine($"Результат возведения в степень {result}");
+int Prompt(String text)
+{
+    Write($"{text} ");
+    return int.Parse(ReadLine());
+}
