@@ -2,15 +2,22 @@
 using static System.Console;
 
 Clear();
-Write("Введите число ");
-int digit = int.Parse(ReadLine());
+int digit = prompt("Введите число");
+WriteLine($"Сумма цифр числа {sumDigits(digit)}");
 
-int result = 0;
-
-while (digit > 0) 
+int sumDigits(int value)
 {
-    result += digit % 10;
-    digit /= 10;
+    int result = 0;
+    while (digit > 0)
+    {
+        result += digit % 10;
+        digit /= 10;
+    }
+    return result;
 }
 
-WriteLine($"Сумма цифр числа {result}");
+int prompt(String text)
+{
+    Console.Write($"{text} ");
+    return int.Parse(Console.ReadLine());
+}
