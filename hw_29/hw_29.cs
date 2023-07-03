@@ -1,8 +1,8 @@
 ﻿
 Console.Clear();
 int count = prompt("Введите число");
-int max = prompt("Введите максимальное число");
 int min = prompt("Введите минимальное число");
+int max = prompt("Введите максимальное число");
 printArray(getArray(count, min, max));
 
 void printArray(int[] array) 
@@ -17,9 +17,10 @@ void printArray(int[] array)
 int[] getArray(int count, int min, int max) 
 {
     int[] array = new int[count];
+    Random random = new Random();
     for (int i = 0; i < count; i++) 
     {
-        array[i] = new Random().Next(min, max + 1);
+        array[i] = random.Next(min, max + 1);
     }
     return array;
 }
