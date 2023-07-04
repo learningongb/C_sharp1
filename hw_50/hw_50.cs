@@ -9,12 +9,12 @@ const int countColumns = 5;
 int row = Prompt("Введите номер строки (начиная с 0)");
 int column = Prompt("Введите номер столбца (начиная с 0)");
 
-double[,] matrix = generateMatrix(countRows, countColumns);
+double[,] matrix = GenerateMatrix(countRows, countColumns);
 
-if (validateCell(matrix, row, column))
+if (ValidateCell(matrix, row, column))
     WriteLine(matrix[row, column]);
 
-bool validateCell(double[,] matrix, int i, int j)
+bool ValidateCell(double[,] matrix, int i, int j)
 {
     if (matrix.GetUpperBound(0) >= i && matrix.GetUpperBound(1) >= j)
         return true;
@@ -22,7 +22,7 @@ bool validateCell(double[,] matrix, int i, int j)
     return false;
 }
 
-double[,] generateMatrix(int countRows, int countColumns)
+double[,] GenerateMatrix(int countRows, int countColumns)
 {
     double[,] matrix = new double[countRows, countColumns];
     Random random = new Random();
