@@ -16,26 +16,26 @@ double[] mean = ArithmeticMean(matrix);
 WriteLine("Среднее арифметическое столбцов");
 PrintArray(mean);
 
-double[] ArithmeticMean(int[,] matrix) 
+double[] ArithmeticMean(int[,] matrix)
 {
     int countRows = matrix.GetUpperBound(0) + 1;
     int countColumns = matrix.GetUpperBound(1) + 1;
     double[] sumColumns = new double[countColumns];
-    for (int i = 0; i < countRows; i++) 
+    for (int i = 0; i < countRows; i++)
     {
-        for (int j = 0; j < countColumns; j++) 
+        for (int j = 0; j < countColumns; j++)
         {
             sumColumns[j] += matrix[i, j];
         }
     }
-    for (int j = 0; j < countColumns; j++) 
+    for (int j = 0; j < countColumns; j++)
     {
         sumColumns[j] /= countRows;
     }
     return sumColumns;
 }
 
-void PrintArray(double[] array) 
+void PrintArray(double[] array)
 {
     foreach (var item in array)
     {
