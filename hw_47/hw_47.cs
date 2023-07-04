@@ -8,9 +8,9 @@ const int accuracy = 1;
 int countRows = Prompt("Введите количество строк");
 int countColumns = Prompt("Введите количество столбцов");
 
-printMatrix(generateMatrix(countRows, countColumns));
+PrintMatrix(GenerateMatrix(countRows, countColumns));
 
-void printMatrix(double[,] matrix)
+void PrintMatrix(double[,] matrix)
 {
     int maxi = matrix.GetUpperBound(0);
     int maxj = matrix.GetUpperBound(1);
@@ -24,7 +24,7 @@ void printMatrix(double[,] matrix)
     }
 }
 
-double[,] generateMatrix(int countRows, int countColumns)
+double[,] GenerateMatrix(int countRows, int countColumns)
 {
     double[,] matrix = new double[countRows, countColumns];
     Random random = new Random();
