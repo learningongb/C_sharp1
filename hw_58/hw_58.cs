@@ -5,7 +5,7 @@ Clear();
 
 const int minValue = 1;
 const int maxValue = 10;
-const int countRows1 = 5;
+const int countRows1 = 1;
 const int countColumns1 = 8;
 const int countRows2 = 8;
 const int countColumns2 = 2;
