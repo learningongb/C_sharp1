@@ -10,29 +10,49 @@ const int countColumns1 = 8;
 const int countRows2 = 8;
 const int countColumns2 = 2;
 
-int[,] matrix1 = GenerateMatrix(countRows1, countColumns1);
-// int[,] matrix1 = new int[4, 4]
-// {{1, 4, 7, 2},
-// {5, 9, 2, 3},
-// {8, 4, 2, 4},
-// {5, 2, 6, 7}};
+// int[,] matrix1 = GenerateMatrix(countRows1, countColumns1);
+int[,] matrix1 = new int[4, 4]
+{{1, 4, 7, 2},
+{5, 9, 2, 3},
+{8, 4, 2, 4},
+{5, 2, 6, 7}};
 WriteLine("Исходная матрица 1");
 PrintMatrix(matrix1);
 
-int[,] matrix2 = GenerateMatrix(countRows2, countColumns2);
-// int[,] matrix2 = new int[4, 4]
-// {{1, 5, 8, 5},
-// {4, 9, 4, 2},
-// {7, 2, 2, 6},
-// {2, 3, 4, 7}};
+// int[,] matrix2 = GenerateMatrix(countRows2, countColumns2);
+int[,] matrix2 = new int[4, 4]
+{{1, 5, 8, 5},
+{4, 9, 4, 2},
+{7, 2, 2, 6},
+{2, 3, 4, 7}};
 WriteLine("Исходная матрица 2");
 PrintMatrix(matrix2);
+
+int[,] resultMatrix2 = MultiplyMatrix2(matrix1, matrix2);
+WriteLine("Результат умножения, как в задании");
+PrintMatrix(resultMatrix2);
+
 
 if (Validate(matrix1, matrix2))
 {
     int[,] resultMatrix = MultiplyMatrix(matrix1, matrix2);
-    WriteLine("Результат умножения");
+    WriteLine("Результат умножения, как в математике");
     PrintMatrix(resultMatrix);
+}
+
+int[,] MultiplyMatrix2(int[,] matrix1, int[,] matrix2)
+{
+    int rows = matrix1.GetUpperBound(0) + 1;
+    int columns = matrix1.GetUpperBound(1) + 1;
+    int[,] resultMultiply = new int[rows, columns];
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < columns; j++)
+        {
+            resultMultiply[i, j] = matrix1[i, j] * matrix2[i, j];    
+        }
+    }
+    return resultMultiply;
 }
 
 int[,] MultiplyMatrix(int[,] matrix1, int[,] matrix2)
